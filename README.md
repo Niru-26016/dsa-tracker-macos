@@ -83,24 +83,20 @@
 
 ### Option 1: Download from GitHub Releases (Recommended)
 
-1. Download **`DSA-Tracker-macOS-v1.0.0.zip`** and **`SHA256SUMS`** from the [Latest Release](https://github.com/Niru-26016/dsa-tracker-macos/releases/tag/v1.0.0).
-2. Verify the archive integrity:
-   ```bash
-   shasum -a 256 -c SHA256SUMS
-   ```
-3. Unzip the file and move `DSA Tracker.app` to your `/Applications` folder:
+1. **Download**: Grab **[`DSA-Tracker-macOS-v1.0.0.zip`](https://github.com/Niru-26016/dsa-tracker-macos/releases/tag/v1.0.0)** from the Latest Release.
+2. **Move to Applications**: Unzip the file and move **`DSA Tracker.app`** to your **`/Applications`** folder:
    ```bash
    mv "DSA Tracker.app" /Applications/
    ```
-4. Register the widget extension with macOS LaunchServices:
+3. **Register Widget** (run once in Terminal):
    ```bash
    /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f "/Applications/DSA Tracker.app"
    pluginkit -a "/Applications/DSA Tracker.app/Contents/PlugIns/DSATrackerWidgetExtension.appex"
    pluginkit -e use -i com.dsatracker.mac.widget
    killall chronod NotificationCenter 2>/dev/null || true
    ```
-5. **Add to Desktop**:
-   - Right-click anywhere on your desktop wallpaper and choose **Edit Widgets...** (or click the date & time in your menu bar).
+4. **Add to Desktop**:
+   - Right-click anywhere on your desktop wallpaper and choose **Edit Widgets...**
    - In the gallery sidebar, search for **DSA Tracker**.
    - Drag the **Large** or **Extra Large** widget onto your desktop and click **Done**!
 
@@ -140,7 +136,7 @@ dsa-tracker-macos/
 │
 ├── 📁 scripts/
 │   ├── 📄 bundle_app.sh                         # Universal (arm64 + x86_64) release compiler & codesign
-│   └── 📄 package_release.sh                    # Universal ZIP archive packager & SHA256SUMS generator
+│   └── 📄 package_release.sh                    # Universal ZIP archive packager
 │
 ├── 📁 docs/
 │   └── 📁 screenshots/                          # Preview image assets for README
