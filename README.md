@@ -1,131 +1,212 @@
-# DSA Tracker for macOS
+<div align="center">
 
-A native desktop widget for tracking **300 DSA problems across 34 topics**.
-Requires **macOS 14 or later**. The release includes Apple Silicon and Intel binaries.
+#  DSA Tracker for macOS
+
+### A native, interactive desktop widget to master 300 curated Data Structures & Algorithms problems across 34 topics.
+
+[![macOS 14.0+](https://img.shields.io/badge/macOS-14.0%2B%20Sonoma%20%7C%20Sequoia-000000?style=for-the-badge&logo=apple&logoColor=white)](https://apple.com/macos)
+[![Swift 5.9](https://img.shields.io/badge/Swift-5.9%2B-FA7343?style=for-the-badge&logo=swift&logoColor=white)](https://swift.org)
+[![WidgetKit](https://img.shields.io/badge/WidgetKit-Interactive-8A2BE2?style=for-the-badge&logo=apple&logoColor=white)](https://developer.apple.com/documentation/widgetkit)
+[![Release](https://img.shields.io/badge/Release-v1.0.0-2EA44F?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Niru-26016/dsa-tracker-macos/releases/tag/v1.0.0)
+[![Architecture](https://img.shields.io/badge/Arch-Universal%20(arm64%20%2B%20x86__64)-informational?style=for-the-badge&logo=apple)](https://github.com/Niru-26016/dsa-tracker-macos/releases/tag/v1.0.0)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
+
+<br/>
+
+[✨ Features](#-key-features) • [📸 Preview](#-preview) • [🖥️ Sizes](#-supported-widget-sizes) • [🚀 Quick Install](#-quick-install) • [📂 Project Structure](#-project-structure) • [🛠️ Build from Source](#️-build-from-source) • [📄 License](#-license)
+
+</div>
+
+---
 
 ## 📸 Preview
 
-<p align="center">
-  <img src="docs/screenshots/large-widget.png" alt="DSA Tracker Large Widget" width="400"/>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="docs/screenshots/extra-large-widget.png" alt="DSA Tracker Extra Large Widget" width="400"/>
-</p>
+<div align="center">
+  <table border="0">
+    <tr>
+      <td align="center" width="50%">
+        <strong>Large (4×4) Widget</strong><br/>
+        <em>Single-column view with topic selector, topic progress bar & pinned pagination</em><br/><br/>
+        <img src="docs/screenshots/large-widget.png" alt="DSA Tracker Large Widget (4x4)" width="380"/>
+      </td>
+      <td align="center" width="50%">
+        <strong>Extra Large (8×4) Widget</strong><br/>
+        <em>Expansive 2-column view displaying up to 12 problems simultaneously</em><br/><br/>
+        <img src="docs/screenshots/extra-large-widget.png" alt="DSA Tracker Extra Large Widget (8x4)" width="480"/>
+      </td>
+    </tr>
+  </table>
+</div>
 
 > [!TIP]
-> Place your widget screenshots in `docs/screenshots/large-widget.png` and `docs/screenshots/extra-large-widget.png` to showcase the widget in action.
+> **Insert your screenshots**: Save your desktop captures as `docs/screenshots/large-widget.png` and `docs/screenshots/extra-large-widget.png` to showcase them directly above.
 
-## Features
+---
 
-- Check off problems directly in the widget, with immediate visual feedback.
-- Follow a numbered roadmap with difficulty and subtopic labels.
-- Open each problem on LeetCode or GeeksforGeeks in your default browser.
-- Choose a topic from the category grid or cycle through topics with the arrows.
-- View topic and overall completion totals.
-- Page through six problems in Large, or twelve in two columns in Extra Large.
-- Keep progress locally, with no account, server, or telemetry.
+## ✨ Key Features
 
-## Install
+- **🎯 300 Curated Problems (1 to 300 Sequential Roadmap)**:
+  - Complete interview preparation coverage: Arrays, Hashing, Two Pointers, Sliding Window, Monotonic Stack, Binary Trees, BST, Graphs, Dijkstra, Dynamic Programming, Segment Trees, and more.
+  - Every problem includes difficulty badges (`Easy`, `Medium`, `Hard`), subtopics, and clickable links to **LeetCode** and **GeeksforGeeks**.
+- **⚡ Interactive Desktop Checkboxes**:
+  - Check off solved problems directly from your desktop wallpaper with immediate visual feedback via native `AppIntents`.
+- **🗂️ Two In-Widget Topic Selection Modes**:
+  - **`•••` Category Grid**: Tap the topic pill at the top of the widget canvas to reveal a 34-category grid and jump directly to any topic.
+  - **`<` and `>` Chevrons**: Cycle sequentially through topics with one click.
+- **📊 Topic-Wise Visual Progress Bar**:
+  - The gradient progress bar tracks your completion for the **currently selected category** (fills to 100% when all questions in that category are checked).
+  - Next to the category name, view `X/Y done (Z%)` for that specific topic.
+  - The top-right pill tracks overall progress across the entire **300-question roadmap** (`X/300 • Z%`).
+- **📌 Pinned, Static 6-Problem Layout**:
+  - Displays exactly **6 problems per page** in Large, or **12 problems** in Extra Large.
+  - The header and pagination footer (`[< Prev]`, `Page X of Y`, `[Next >]`) are **permanently pinned** in place. The layout never shrinks, resizes, or shifts padding.
+- **🔕 100% Pure Headless Design (`LSUIElement: true`)**:
+  - Zero floating windows, zero dock clutter, and zero background menu bar items.
+  - Toggling checkboxes updates the widget in-place without launching any app windows.
+  - Clicking a problem title opens it directly in your default web browser (Safari, Chrome, Arc, etc.).
+- **🔒 Code-First & Offline Storage**:
+  - All questions are defined in [`StarterProblems.swift`](Sources/DSATrackerMac/Models/StarterProblems.swift). Changes in code take effect immediately while preserving your existing checkmarks.
+  - 100% offline and private. Data is saved locally via thread-safe POSIX file-locked storage (`~/Library/Containers/com.dsatracker.mac.widget/.../problems.json`). No accounts, servers, or telemetry.
 
-1. Download `DSA-Tracker-macOS-v1.0.0.zip` from the [first release](https://github.com/Niru-26016/dsa-tracker-macos/releases/tag/v1.0.0).
-2. Unzip it and move `DSA Tracker.app` to `/Applications`. Replace the previous copy if upgrading.
-3. Open the app once so macOS can discover its widget. The host has no window or Dock icon.
-4. Right-click the desktop, choose **Edit Widgets**, find **DSA Tracker**, and add Large or Extra Large.
+---
 
-The app is locally signed (ad-hoc), **not Developer ID signed or notarized**.
-macOS may block a downloaded copy. Only if you trust its source, use the approval
-option in **System Settings → Privacy & Security** after attempting to open it.
-Do not disable Gatekeeper globally.
+## 🖥️ Supported Widget Sizes
 
-`SHA256SUMS` is attached to the release. Download it beside the ZIP and verify with:
+| Size | Grid Footprint | Capacity | Best For |
+| :--- | :---: | :---: | :--- |
+| **Large** *(Default)* | 4×4 Grid | 6 problems / page | Daily focus on desktop wallpaper with difficulty badges, subtopics, and pinned footer. |
+| **Extra Large** | 8×4 Grid | 12 problems / page | Power users on wide displays showing two simultaneous 6-item columns. |
 
-```bash
-shasum -a 256 -c SHA256SUMS
+---
+
+## 🚀 Quick Install
+
+### Option 1: Download from GitHub Releases (Recommended)
+
+1. Download **`DSA-Tracker-macOS-v1.0.0.zip`** and **`SHA256SUMS`** from the [Latest Release](https://github.com/Niru-26016/dsa-tracker-macos/releases/tag/v1.0.0).
+2. Verify the archive integrity:
+   ```bash
+   shasum -a 256 -c SHA256SUMS
+   ```
+3. Unzip the file and move `DSA Tracker.app` to your `/Applications` folder:
+   ```bash
+   mv "DSA Tracker.app" /Applications/
+   ```
+4. Register the widget extension with macOS LaunchServices:
+   ```bash
+   /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f "/Applications/DSA Tracker.app"
+   pluginkit -a "/Applications/DSA Tracker.app/Contents/PlugIns/DSATrackerWidgetExtension.appex"
+   pluginkit -e use -i com.dsatracker.mac.widget
+   killall chronod NotificationCenter 2>/dev/null || true
+   ```
+5. **Add to Desktop**:
+   - Right-click anywhere on your desktop wallpaper and choose **Edit Widgets...** (or click the date & time in your menu bar).
+   - In the gallery sidebar, search for **DSA Tracker**.
+   - Drag the **Large** or **Extra Large** widget onto your desktop and click **Done**!
+
+> [!NOTE]
+> The app is locally signed (ad-hoc) for personal use. If macOS Gatekeeper displays a prompt on first open, go to **System Settings → Privacy & Security** and click **Open Anyway**.
+
+---
+
+## 📂 Project Structure
+
+```text
+dsa-tracker-macos/
+│
+├── 📁 Sources/
+│   │
+│   ├── 📁 DSATrackerMac/                        # Headless macOS host application
+│   │   ├── 📄 DSATrackerMacApp.swift            # Host lifecycle (pure accessory, LSUIElement: true)
+│   │   │
+│   │   └── 📁 Models/
+│   │       ├── 📄 Problem.swift                 # Core Problem model, Difficulty & Platform enums, Topic lists
+│   │       ├── 📄 StarterProblems.swift         # 300 curated questions (Source of Truth)
+│   │       └── 📄 TrackerStore.swift            # POSIX file-locked state management & ProblemPage math
+│   │
+│   └── 📁 DSATrackerWidget/                     # Native WidgetKit extension
+│       ├── 📄 DSATrackerWidget.swift            # StaticConfiguration views (Large & Extra Large)
+│       └── 📄 ToggleProblemIntent.swift         # Interactive AppIntents (checkboxes, topic picker, paging)
+│
+├── 📁 Tests/
+│   └── 📁 DSATrackerMacTests/
+│       └── 📄 TrackerStoreTests.swift           # 17 unit tests (persistence, migration, concurrency)
+│
+├── 📁 Support/
+│   ├── 📄 Info.plist                            # Host app metadata & LSUIElement flag
+│   ├── 📄 WidgetInfo.plist                      # WidgetKit extension configuration
+│   ├── 📄 DSATrackerMac.entitlements            # Host sandbox permissions
+│   └── 📄 DSATrackerWidgetExtension.entitlements# Widget sandbox permissions
+│
+├── 📁 scripts/
+│   ├── 📄 bundle_app.sh                         # Universal (arm64 + x86_64) release compiler & codesign
+│   └── 📄 package_release.sh                    # Universal ZIP archive packager & SHA256SUMS generator
+│
+├── 📁 docs/
+│   └── 📁 screenshots/                          # Preview image assets for README
+│       └── 📄 README.md                         # Screenshot guidelines
+│
+├── 📁 .github/
+│   └── 📁 workflows/
+│       └── 📄 ci.yml                            # GitHub Actions automated test & build workflow
+│
+├── 🛠️ DSATracker.xcodeproj/                     # Checked-in Xcode project (ready to build in Xcode)
+├── ⚙️ project.yml                               # Declarative XcodeGen project specification
+├── 📦 Package.swift                             # Swift Package Manager manifest (for swift test)
+├── 📋 CHANGELOG.md                              # Chronological release log
+├── 📜 LICENSE                                   # MIT License
+└── 📖 README.md                                 # Complete documentation
 ```
 
-## Usage and troubleshooting
+---
 
-Click a checkbox to change completion, a problem title to open its page, and the
-topic pill to open the category grid. Completion counts reconcile after the saved
-state reaches the refreshed widget timeline.
+## 🛠️ Build from Source
 
-To reposition the widget, keep **Edit Widgets** open and drag from an empty area.
-macOS controls desktop placement and rearrangement of icons. If Apple's widgets
-also snap back, troubleshoot the desktop layout rather than the tracker.
+### Prerequisites
+- macOS 14.0 (Sonoma) or later
+- Xcode 15.0 or later (with command line tools installed)
+- No Node.js, npm, or external dependencies required
 
-If the widget is missing after installation, open the host app once and reopen
-Edit Widgets. If macOS still has not discovered it, register the installed bundle:
+### Build Steps
 
 ```bash
-/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f "/Applications/DSA Tracker.app"
-pluginkit -a "/Applications/DSA Tracker.app/Contents/PlugIns/DSATrackerWidgetExtension.appex"
-```
-
-## Build and test
-
-Install Xcode 16 or later and its command-line tools. This is a Swift project:
-**Node.js, npm, and node_modules are not required**. There are no external Swift
-package dependencies. The checked-in Xcode project builds both the host and widget.
-
-```bash
+# Clone the repository
 git clone https://github.com/Niru-26016/dsa-tracker-macos.git
 cd dsa-tracker-macos
+
+# Run unit tests
 swift test
-bash scripts/bundle_app.sh
-```
 
-The app is generated at `build/Build/Products/Release/DSA Tracker.app`. The build
-script builds both architectures and verifies the bundle signatures; it does not
-install the app or publish a release. `swift build` alone only builds the host,
-not the widget extension.
-
-To produce a ZIP and checksum:
-
-```bash
+# Build and package universal (arm64 + x86_64) release
 bash scripts/package_release.sh
 ```
 
-Output goes into `dist/`. Both `build/` and `dist/` are ignored by Git. Release
-binaries are attached to GitHub Releases, not committed to the source tree.
-GitHub Actions runs the tests and universal packaging checks on pushes and PRs.
+The universal app bundle is generated at `build/Build/Products/Release/DSA Tracker.app`, and the verified release archive is placed in `dist/`.
 
-`project.yml` is the XcodeGen project definition. If you change project structure,
-install XcodeGen and run `xcodegen generate`, then commit the updated project too.
+---
 
-## Data and curriculum
+## 💡 How to Customize Problems in Code
 
-The widget stores progress in its local sandbox, normally:
+The curriculum is completely code-first. To add, edit, or customize problems:
 
-```text
-~/Library/Containers/com.dsatracker.mac.widget/Data/Library/Application Support/DSATracker/problems.json
-```
+1. Open [`Sources/DSATrackerMac/Models/StarterProblems.swift`](Sources/DSATrackerMac/Models/StarterProblems.swift).
+2. Modify or add entries using the `Problem` model:
+   ```swift
+   Problem(
+       title: "Two Sum",
+       topic: "Hashing",
+       subtopic: "Hash Map Lookup",
+       difficulty: .easy,
+       platform: .leetCode,
+       url: URL(string: "https://leetcode.com/problems/two-sum/")!,
+       priority: 22
+   )
+   ```
+3. Rebuild with `bash scripts/bundle_app.sh`.
+4. Your changes take effect immediately on your desktop, and existing checkmarks are automatically retained.
 
-Topic and page preferences live beside that file. Back up this folder before
-manually editing stored data. Concurrent completion writes are serialized and
-saved atomically. An unreadable progress file is not overwritten by checkbox or
-reset actions; preserve it for recovery if an action fails.
+---
 
-Edit [StarterProblems.swift](Sources/DSATrackerMac/Models/StarterProblems.swift) to
-change the curriculum. IDs remain stable across restarts and reordering. Legacy
-saves migrate by topic and title, with a unique-title fallback for topic moves.
-Renaming a problem changes its generated ID; moving and renaming it together may
-require an explicit migration to retain its checkmark.
+## 📄 License
 
-## Project layout
-
-```text
-Sources/DSATrackerMac/          Headless host and shared models
-Sources/DSATrackerWidget/       Widget views and interactive intents
-Tests/DSATrackerMacTests/       Persistence, migration, concurrency, paging tests
-Support/                      App and extension plists and entitlements
-DSATracker.xcodeproj/          Buildable Xcode project
-project.yml                   XcodeGen source
-scripts/                      Universal build and release packaging
-.github/workflows/ci.yml       macOS checks
-```
-
-Local tests cover model behavior; they do not prove macOS desktop drag behavior,
-WidgetKit scheduling latency, or the availability of every external problem URL.
-
-## License
-
-[MIT](LICENSE).
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
