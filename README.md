@@ -3,6 +3,17 @@
 A native desktop widget for tracking **300 DSA problems across 34 topics**.
 Requires **macOS 14 or later**. The release includes Apple Silicon and Intel binaries.
 
+## 📸 Preview
+
+<p align="center">
+  <img src="docs/screenshots/large-widget.png" alt="DSA Tracker Large Widget" width="400"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="docs/screenshots/extra-large-widget.png" alt="DSA Tracker Extra Large Widget" width="400"/>
+</p>
+
+> [!TIP]
+> Place your widget screenshots in `docs/screenshots/large-widget.png` and `docs/screenshots/extra-large-widget.png` to showcase the widget in action.
+
 ## Features
 
 - Check off problems directly in the widget, with immediate visual feedback.
@@ -15,7 +26,7 @@ Requires **macOS 14 or later**. The release includes Apple Silicon and Intel bin
 
 ## Install
 
-1. Download `DSA-Tracker-macOS-v1.0.0.zip` from the [first release](https://github.com/Niru-26016/dsa-tracker/releases/tag/v1.0.0).
+1. Download `DSA-Tracker-macOS-v1.0.0.zip` from the [first release](https://github.com/Niru-26016/dsa-tracker-macos/releases/tag/v1.0.0).
 2. Unzip it and move `DSA Tracker.app` to `/Applications`. Replace the previous copy if upgrading.
 3. Open the app once so macOS can discover its widget. The host has no window or Dock icon.
 4. Right-click the desktop, choose **Edit Widgets**, find **DSA Tracker**, and add Large or Extra Large.
@@ -56,8 +67,8 @@ Install Xcode 16 or later and its command-line tools. This is a Swift project:
 package dependencies. The checked-in Xcode project builds both the host and widget.
 
 ```bash
-git clone https://github.com/Niru-26016/dsa-tracker.git
-cd dsa-tracker
+git clone https://github.com/Niru-26016/dsa-tracker-macos.git
+cd dsa-tracker-macos
 swift test
 bash scripts/bundle_app.sh
 ```
