@@ -38,9 +38,6 @@
   </table>
 </div>
 
-> [!TIP]
-> **Insert your screenshots**: Save your desktop captures as `docs/screenshots/large-widget.png` and `docs/screenshots/extra-large-widget.png` to showcase them directly above.
-
 ---
 
 ## ✨ Key Features
@@ -81,27 +78,18 @@
 
 ## 🚀 Quick Install
 
-### Option 1: Download from GitHub Releases (Recommended)
-
-1. **Download**: Grab **[`DSA-Tracker-macOS-v1.0.0.zip`](https://github.com/Niru-26016/dsa-tracker-macos/releases/tag/v1.0.0)** from the Latest Release.
-2. **Move to Applications**: Unzip the file and move **`DSA Tracker.app`** to your **`/Applications`** folder:
-   ```bash
-   mv "DSA Tracker.app" /Applications/
-   ```
-3. **Register Widget** (run once in Terminal):
-   ```bash
-   /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f "/Applications/DSA Tracker.app"
-   pluginkit -a "/Applications/DSA Tracker.app/Contents/PlugIns/DSATrackerWidgetExtension.appex"
-   pluginkit -e use -i com.dsatracker.mac.widget
-   killall chronod NotificationCenter 2>/dev/null || true
-   ```
-4. **Add to Desktop**:
+1. **Download & Extract**: Download [**`DSA-Tracker-macOS-v1.0.0.zip`**](https://github.com/Niru-26016/dsa-tracker-macos/releases/tag/v1.0.0) from the Latest Release and double-click to extract **`DSA Tracker.app`**.
+2. **Move to Applications** *(Recommended)*: Drag **`DSA Tracker.app`** into your **`/Applications`** folder.
+3. **Add to Desktop**:
    - Right-click anywhere on your desktop wallpaper and choose **Edit Widgets...**
    - In the gallery sidebar, search for **DSA Tracker**.
    - Drag the **Large** or **Extra Large** widget onto your desktop and click **Done**!
 
 > [!NOTE]
-> The app is locally signed (ad-hoc) for personal use. If macOS Gatekeeper displays a prompt on first open, go to **System Settings → Privacy & Security** and click **Open Anyway**.
+> The widget is automatically discovered by macOS as soon as you unzip the app. If macOS ever needs a manual cache refresh, run this single line in Terminal:
+> ```bash
+> /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f "/Applications/DSA Tracker.app" && pluginkit -a "/Applications/DSA Tracker.app/Contents/PlugIns/DSATrackerWidgetExtension.appex" && pluginkit -e use -i com.dsatracker.mac.widget && killall chronod NotificationCenter 2>/dev/null || true
+> ```
 
 ---
 
