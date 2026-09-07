@@ -1,0 +1,451 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19AD8C353AD2D996C946BA64 /* TrackerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82232461C976B8439A4F8088 /* TrackerStore.swift */; };
+		3B3B903F6039A67D6CF62839 /* DSATrackerWidgetExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 53E09653F39EE895D4804A0B /* DSATrackerWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6C1ACA502AD281D7A494807E /* DSATrackerMacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 931BF2543E13F0A92DEEEE8C /* DSATrackerMacApp.swift */; };
+		735D1D48FD36C81F81DDEA67 /* TrackerStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82232461C976B8439A4F8088 /* TrackerStore.swift */; };
+		8A99E3919F59EDC8742B68B7 /* DSATrackerWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348BA723B695C522812AAE00 /* DSATrackerWidget.swift */; };
+		8BB54459D1BB8EAD9881273A /* ToggleProblemIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1145927BD0237FF289F21042 /* ToggleProblemIntent.swift */; };
+		A6F2B96DB39DA3B8E4D02BCA /* StarterProblems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678927EAAB62D9C02A03BFE7 /* StarterProblems.swift */; };
+		D7268F40DB8D13371D89F78A /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB647C6D42563E482AEFE079 /* Problem.swift */; };
+		E79D6978B2C2A66373647D65 /* StarterProblems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 678927EAAB62D9C02A03BFE7 /* StarterProblems.swift */; };
+		F9B17C9CED4F3A4C130D36A8 /* Problem.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB647C6D42563E482AEFE079 /* Problem.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AA79AD757DB15ECA1C542371 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 27710FB46F3638F0DA0AB96F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 29B8AFBAA068AB11A4BC271D;
+			remoteInfo = DSATrackerWidgetExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D46B0EC0B1C8AA5854F5728B /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3B3B903F6039A67D6CF62839 /* DSATrackerWidgetExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		1145927BD0237FF289F21042 /* ToggleProblemIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToggleProblemIntent.swift; sourceTree = "<group>"; };
+		348BA723B695C522812AAE00 /* DSATrackerWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSATrackerWidget.swift; sourceTree = "<group>"; };
+		53E09653F39EE895D4804A0B /* DSATrackerWidgetExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DSATrackerWidgetExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		56FDAA06DB3F244102366AF1 /* DSATrackerMac.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DSATrackerMac.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		678927EAAB62D9C02A03BFE7 /* StarterProblems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterProblems.swift; sourceTree = "<group>"; };
+		82232461C976B8439A4F8088 /* TrackerStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackerStore.swift; sourceTree = "<group>"; };
+		931BF2543E13F0A92DEEEE8C /* DSATrackerMacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DSATrackerMacApp.swift; sourceTree = "<group>"; };
+		EB647C6D42563E482AEFE079 /* Problem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Problem.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		4710B32AA3E320B0557C5EBE /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				EB647C6D42563E482AEFE079 /* Problem.swift */,
+				678927EAAB62D9C02A03BFE7 /* StarterProblems.swift */,
+				82232461C976B8439A4F8088 /* TrackerStore.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		5496D59544D93FF7377E63F9 /* DSATrackerMac */ = {
+			isa = PBXGroup;
+			children = (
+				931BF2543E13F0A92DEEEE8C /* DSATrackerMacApp.swift */,
+				4710B32AA3E320B0557C5EBE /* Models */,
+			);
+			path = DSATrackerMac;
+			sourceTree = "<group>";
+		};
+		B3E7025F70422DA2D5D62F8E /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				5496D59544D93FF7377E63F9 /* DSATrackerMac */,
+				BF9E49A8DF36104C2E0E3E9E /* DSATrackerWidget */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		BF9E49A8DF36104C2E0E3E9E /* DSATrackerWidget */ = {
+			isa = PBXGroup;
+			children = (
+				348BA723B695C522812AAE00 /* DSATrackerWidget.swift */,
+				1145927BD0237FF289F21042 /* ToggleProblemIntent.swift */,
+			);
+			path = DSATrackerWidget;
+			sourceTree = "<group>";
+		};
+		DFB26C74EE76FA234EDA2642 = {
+			isa = PBXGroup;
+			children = (
+				B3E7025F70422DA2D5D62F8E /* Sources */,
+				E6BF53F8AB84A41EAFC380EB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E6BF53F8AB84A41EAFC380EB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				56FDAA06DB3F244102366AF1 /* DSATrackerMac.app */,
+				53E09653F39EE895D4804A0B /* DSATrackerWidgetExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		29B8AFBAA068AB11A4BC271D /* DSATrackerWidgetExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 128084AF0C880982EF41CE87 /* Build configuration list for PBXNativeTarget "DSATrackerWidgetExtension" */;
+			buildPhases = (
+				EEF5A4920F9930B354A023BF /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DSATrackerWidgetExtension;
+			packageProductDependencies = (
+			);
+			productName = DSATrackerWidgetExtension;
+			productReference = 53E09653F39EE895D4804A0B /* DSATrackerWidgetExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		D335BC57073C613A6E437094 /* DSATrackerMac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C9378FEBDA1350E358FEF730 /* Build configuration list for PBXNativeTarget "DSATrackerMac" */;
+			buildPhases = (
+				6764705234FA40F778930F68 /* Sources */,
+				D46B0EC0B1C8AA5854F5728B /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E53818801FA98D8F0A53BECD /* PBXTargetDependency */,
+			);
+			name = DSATrackerMac;
+			packageProductDependencies = (
+			);
+			productName = DSATrackerMac;
+			productReference = 56FDAA06DB3F244102366AF1 /* DSATrackerMac.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		27710FB46F3638F0DA0AB96F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					29B8AFBAA068AB11A4BC271D = {
+						ProvisioningStyle = Manual;
+					};
+					D335BC57073C613A6E437094 = {
+						ProvisioningStyle = Manual;
+					};
+				};
+			};
+			buildConfigurationList = 88D8529E594FAA9F9037D458 /* Build configuration list for PBXProject "DSATracker" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = DFB26C74EE76FA234EDA2642;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = E6BF53F8AB84A41EAFC380EB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D335BC57073C613A6E437094 /* DSATrackerMac */,
+				29B8AFBAA068AB11A4BC271D /* DSATrackerWidgetExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6764705234FA40F778930F68 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C1ACA502AD281D7A494807E /* DSATrackerMacApp.swift in Sources */,
+				D7268F40DB8D13371D89F78A /* Problem.swift in Sources */,
+				A6F2B96DB39DA3B8E4D02BCA /* StarterProblems.swift in Sources */,
+				19AD8C353AD2D996C946BA64 /* TrackerStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EEF5A4920F9930B354A023BF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8A99E3919F59EDC8742B68B7 /* DSATrackerWidget.swift in Sources */,
+				F9B17C9CED4F3A4C130D36A8 /* Problem.swift in Sources */,
+				E79D6978B2C2A66373647D65 /* StarterProblems.swift in Sources */,
+				8BB54459D1BB8EAD9881273A /* ToggleProblemIntent.swift in Sources */,
+				735D1D48FD36C81F81DDEA67 /* TrackerStore.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E53818801FA98D8F0A53BECD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 29B8AFBAA068AB11A4BC271D /* DSATrackerWidgetExtension */;
+			targetProxy = AA79AD757DB15ECA1C542371 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		24D80A7F54266693AF6ACC3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Support/DSATrackerMac.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
+				INFOPLIST_FILE = Support/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsatracker.mac;
+				PRODUCT_NAME = "DSA Tracker";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		5130E05C75B5693BADBE5CC5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Release;
+		};
+		7C33AF7BD1F616247CD17AD1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.9;
+			};
+			name = Debug;
+		};
+		844227770760D7B3303503F5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Support/DSATrackerMac.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
+				INFOPLIST_FILE = Support/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsatracker.mac;
+				PRODUCT_NAME = "DSA Tracker";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		8B1541384D31CFC08D75FB85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Support/DSATrackerWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
+				INFOPLIST_FILE = Support/WidgetInfo.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsatracker.mac.widget;
+				PRODUCT_NAME = DSATrackerWidgetExtension;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B691118796BD0EC3F76E5C02 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Support/DSATrackerWidgetExtension.entitlements;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Manual;
+				COMBINE_HIDPI_IMAGES = YES;
+				ENABLE_HARDENED_RUNTIME = NO;
+				INFOPLIST_FILE = Support/WidgetInfo.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.dsatracker.mac.widget;
+				PRODUCT_NAME = DSATrackerWidgetExtension;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		128084AF0C880982EF41CE87 /* Build configuration list for PBXNativeTarget "DSATrackerWidgetExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B1541384D31CFC08D75FB85 /* Debug */,
+				B691118796BD0EC3F76E5C02 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		88D8529E594FAA9F9037D458 /* Build configuration list for PBXProject "DSATracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7C33AF7BD1F616247CD17AD1 /* Debug */,
+				5130E05C75B5693BADBE5CC5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C9378FEBDA1350E358FEF730 /* Build configuration list for PBXNativeTarget "DSATrackerMac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				24D80A7F54266693AF6ACC3A /* Debug */,
+				844227770760D7B3303503F5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 27710FB46F3638F0DA0AB96F /* Project object */;
+}

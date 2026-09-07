@@ -1,0 +1,65 @@
+name: DSATracker
+options:
+  bundleIdPrefix: com.dsatracker
+  deploymentTarget:
+    macOS: "14.0"
+  xcodeVersion: "26.6"
+  createIntermediateGroups: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+
+targets:
+  DSATrackerMac:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sources/DSATrackerMac
+        excludes:
+          - "**/.DS_Store"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.dsatracker.mac
+        PRODUCT_NAME: DSA Tracker
+        INFOPLIST_FILE: Support/Info.plist
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGN_STYLE: Manual
+        ENABLE_HARDENED_RUNTIME: false
+        LD_RUNPATH_SEARCH_PATHS:
+          - "@executable_path/../Frameworks"
+    dependencies:
+      - target: DSATrackerWidgetExtension
+        embed: true
+    entitlements:
+      path: Support/DSATrackerMac.entitlements
+      properties:
+        com.apple.security.app-sandbox: false
+
+  DSATrackerWidgetExtension:
+    type: app-extension
+    platform: macOS
+    sources:
+      - path: Sources/DSATrackerWidget
+        excludes:
+          - "**/.DS_Store"
+      - path: Sources/DSATrackerMac/Models
+        excludes:
+          - "**/.DS_Store"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.dsatracker.mac.widget
+        PRODUCT_NAME: DSATrackerWidgetExtension
+        INFOPLIST_FILE: Support/WidgetInfo.plist
+        CODE_SIGN_IDENTITY: "-"
+        CODE_SIGN_STYLE: Manual
+        ENABLE_HARDENED_RUNTIME: false
+        CODE_SIGN_ENTITLEMENTS: Support/DSATrackerWidgetExtension.entitlements
+        LD_RUNPATH_SEARCH_PATHS:
+          - "@executable_path/../Frameworks"
+          - "@executable_path/../../../../Frameworks"
+    entitlements:
+      path: Support/DSATrackerWidgetExtension.entitlements
+      properties:
+        com.apple.security.app-sandbox: true

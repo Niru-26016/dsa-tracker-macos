@@ -1,0 +1,44 @@
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Xcode and Swift Build Artifacts
+build/
+DerivedData/
+.build/
+*.xcworkspace/
+!*.xcodeproj/project.xcworkspace
+xcuserdata/
+*.xcuserdatad/
+*.xcuserstate
+*.xcscmblueprint
+*.moved-aside
+
+# App bundles and archives
+*.app
+*.appex
+*.dSYM
+*.ipa
+*.zip
+
+# Tests temporary files
+.build/debug/DSATrackerTestRunner
+
+# Release output and optional tooling caches
+dist/
+node_modules/
+coverage/
+*.log
+
+# Local configuration and signing material
+.env
+.env.*
+!.env.example
+*.p12
+*.p8
+*.mobileprovision
+*.provisionprofile

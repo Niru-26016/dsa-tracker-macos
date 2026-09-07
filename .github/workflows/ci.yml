@@ -1,0 +1,29 @@
+name: macOS checks
+
+on:
+  push:
+    branches: [main]
+    tags: ['v*']
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: macos-15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+      - name: Test persistence and pagination
+        run: swift test
+      - name: Build and package universal app
+        run: bash scripts/package_release.sh
+      - name: Upload verified package
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
+        with:
+          name: DSA-Tracker-macOS
+          path: |
+            dist/DSA-Tracker-macOS-*.zip
+            dist/SHA256SUMS
+          if-no-files-found: error
