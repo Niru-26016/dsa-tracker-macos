@@ -13,6 +13,8 @@ lipo "$WIDGET_BUNDLE/Contents/MacOS/DSATrackerWidgetExtension" -verify_arch arm6
 
 mkdir -p dist
 ARCHIVE_NAME="DSA-Tracker-macOS-v${VERSION}.zip"
-ditto -c -k --sequesterRsrc --keepParent "$APP_BUNDLE" "dist/$ARCHIVE_NAME"
+ditto -c -k --norsrc --keepParent "$APP_BUNDLE" "dist/$ARCHIVE_NAME"
+(cd dist && shasum -a 256 "$ARCHIVE_NAME" > SHA256SUMS)
 printf 'Release archive: dist/%s\n' "$ARCHIVE_NAME"
+printf 'Checksum generated: dist/SHA256SUMS\n'
 
