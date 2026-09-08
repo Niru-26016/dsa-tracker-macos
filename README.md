@@ -85,11 +85,32 @@
    - In the gallery sidebar, search for **DSA Tracker**.
    - Drag the **Large** or **Extra Large** widget onto your desktop and click **Done**!
 
-> [!NOTE]
-> The widget is automatically discovered by macOS as soon as you unzip the app. If macOS ever needs a manual cache refresh, run this single line in Terminal:
-> ```bash
-> /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f "/Applications/DSA Tracker.app" && pluginkit -a "/Applications/DSA Tracker.app/Contents/PlugIns/DSATrackerWidgetExtension.appex" && pluginkit -e use -i com.dsatracker.mac.widget && killall chronod NotificationCenter 2>/dev/null || true
-> ```
+### ⚠️ First-Time Opening on macOS (Open-Source Security Note)
+
+Because this is a free open-source project without a paid Apple Developer certificate ($99/year), macOS Gatekeeper may display a precautionary warning on first open (*"Apple cannot check it for malicious software"* or *"DSA Tracker was blocked"*).
+
+**How to open it (takes 5 seconds):**
+
+- **Method 1: System Settings (Recommended)**:
+  1. Click **Done** on the alert.
+  2. Open **System Settings  → Privacy & Security**.
+  3. Scroll down to **Security** and click **Open Anyway** next to *DSA Tracker*.
+  4. Confirm by clicking **Open**. *(You only have to do this once; macOS remembers it permanently).*
+
+- **Method 2: One-Line Terminal Shortcut**:
+  If you prefer Terminal, remove the internet download quarantine tag directly:
+  ```bash
+  xattr -cr /Applications/"DSA Tracker.app"
+  ```
+
+<details>
+<summary><b>Troubleshooting (If widget doesn't appear in gallery immediately)</b></summary>
+
+macOS typically registers the widget instantly. If your system requires a manual refresh, run this single line in Terminal:
+```bash
+/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -f "/Applications/DSA Tracker.app" && pluginkit -a "/Applications/DSA Tracker.app/Contents/PlugIns/DSATrackerWidgetExtension.appex" && pluginkit -e use -i com.dsatracker.mac.widget && killall chronod NotificationCenter 2>/dev/null || true
+```
+</details>
 
 ---
 
