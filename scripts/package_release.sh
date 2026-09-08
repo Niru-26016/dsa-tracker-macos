@@ -8,8 +8,8 @@ VERSION=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$APP_B
 WIDGET_BUNDLE="$APP_BUNDLE/Contents/PlugIns/DSATrackerWidgetExtension.appex"
 WIDGET_VERSION=$(/usr/libexec/PlistBuddy -c 'Print :CFBundleShortVersionString' "$WIDGET_BUNDLE/Contents/Info.plist")
 [[ "$VERSION" == "$WIDGET_VERSION" ]] || { echo 'App and widget versions differ.' >&2; exit 1; }
-lipo "$APP_BUNDLE/Contents/MacOS/DSA Tracker" -verify_arch arm64 x86_64
-lipo "$WIDGET_BUNDLE/Contents/MacOS/DSATrackerWidgetExtension" -verify_arch arm64 x86_64
+lipo "$APP_BUNDLE/Contents/MacOS/DSA Tracker" -verify_arch arm64
+lipo "$WIDGET_BUNDLE/Contents/MacOS/DSATrackerWidgetExtension" -verify_arch arm64
 
 mkdir -p dist
 ARCHIVE_NAME="DSA-Tracker-macOS-v${VERSION}.zip"

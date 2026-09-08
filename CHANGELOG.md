@@ -10,7 +10,7 @@ Initial release of DSA Tracker for macOS.
 - Stable problem identifiers and migration of existing local checkmarks.
 - Atomic, serialized progress writes and protection for unreadable saves.
 - Large and Extra Large desktop widgets with accessibility labels.
-- Universal macOS app for Apple Silicon and Intel, requiring macOS 14 or later.
+- Native macOS app for Apple Silicon (M1/M2/M3/M4), requiring macOS 14 or later.
 - Regression tests, CI, and reproducible ZIP/checksum packaging.
 
 Distribution uses ad-hoc signing. This release is not notarized.

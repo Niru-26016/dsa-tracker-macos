@@ -8,7 +8,7 @@
 [![Swift 5.9](https://img.shields.io/badge/Swift-5.9%2B-FA7343?style=for-the-badge&logo=swift&logoColor=white)](https://swift.org)
 [![WidgetKit](https://img.shields.io/badge/WidgetKit-Interactive-8A2BE2?style=for-the-badge&logo=apple&logoColor=white)](https://developer.apple.com/documentation/widgetkit)
 [![Release](https://img.shields.io/badge/Release-v1.0.0-2EA44F?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Niru-26016/dsa-tracker-macos/releases/tag/v1.0.0)
-[![Architecture](https://img.shields.io/badge/Arch-Universal%20(arm64%20%2B%20x86__64)-informational?style=for-the-badge&logo=apple)](https://github.com/Niru-26016/dsa-tracker-macos/releases/tag/v1.0.0)
+[![Architecture](https://img.shields.io/badge/Arch-Apple%20Silicon%20(M1%20%2F%20M2%20%2F%20M3%20%2F%20M4)-informational?style=for-the-badge&logo=apple)](https://github.com/Niru-26016/dsa-tracker-macos/releases/tag/v1.0.0)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](LICENSE)
 
 <br/>
@@ -144,8 +144,8 @@ dsa-tracker-macos/
 │   └── 📄 DSATrackerWidgetExtension.entitlements# Widget sandbox permissions
 │
 ├── 📁 scripts/
-│   ├── 📄 bundle_app.sh                         # Universal (arm64 + x86_64) release compiler & codesign
-│   └── 📄 package_release.sh                    # Universal ZIP archive packager
+│   ├── 📄 bundle_app.sh                         # Apple Silicon (arm64) release compiler & codesign
+│   └── 📄 package_release.sh                    # Apple Silicon ZIP archive packager
 │
 ├── 📁 docs/
 │   └── 📁 screenshots/                          # Preview image assets for README
@@ -182,11 +182,11 @@ cd dsa-tracker-macos
 # Run unit tests
 swift test
 
-# Build and package universal (arm64 + x86_64) release
+# Build and package Apple Silicon (arm64) release
 bash scripts/package_release.sh
 ```
 
-The universal app bundle is generated at `build/Build/Products/Release/DSA Tracker.app`, and the verified release archive is placed in `dist/`.
+The Apple Silicon app bundle is generated at `build/Build/Products/Release/DSA Tracker.app`, and the verified release archive is placed in `dist/`.
 
 ---
 
