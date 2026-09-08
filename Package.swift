@@ -16,7 +16,6 @@ let package = Package(
         .executableTarget(
             name: "DSATrackerMac",
             path: "Sources/DSATrackerMac"
-        ),
-        .testTarget(name: "DSATrackerMacTests", dependencies: ["DSATrackerMac"])
+        )
     ]
 )

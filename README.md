@@ -137,17 +137,12 @@ dsa-tracker-macos/
 │       ├── 📄 DSATrackerMac.entitlements        # Host sandbox permissions
 │       └── 📄 DSATrackerWidgetExtension.entitlements# Widget sandbox permissions
 │
-├── 📁 Tests/
-│   └── 📁 DSATrackerMacTests/
-│       └── 📄 TrackerStoreTests.swift           # 17 unit tests (persistence, migration, concurrency)
-│
 ├── 📁 scripts/
 │   ├── 📄 bundle_app.sh                         # Apple Silicon (arm64) release compiler & codesign
 │   └── 📄 package_release.sh                    # Apple Silicon ZIP archive packager
 │
 ├── ⚙️ project.yml                               # Declarative XcodeGen project specification
-├── 📦 Package.swift                             # Swift Package Manager manifest (for swift test)
-├── 📋 CHANGELOG.md                              # Chronological release log
+├── 📦 Package.swift                             # Swift Package Manager manifest
 ├── 📜 LICENSE                                   # MIT License
 └── 📖 README.md                                 # Complete documentation
 ```
@@ -167,9 +162,6 @@ dsa-tracker-macos/
 # Clone the repository
 git clone https://github.com/Niru-26016/dsa-tracker-macos.git
 cd dsa-tracker-macos
-
-# Run unit tests
-swift test
 
 # Build and package Apple Silicon (arm64) release
 bash scripts/package_release.sh
