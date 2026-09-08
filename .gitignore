@@ -10,8 +10,8 @@
 build/
 DerivedData/
 .build/
+*.xcodeproj/
 *.xcworkspace/
-!*.xcodeproj/project.xcworkspace
 xcuserdata/
 *.xcuserdatad/
 *.xcuserstate

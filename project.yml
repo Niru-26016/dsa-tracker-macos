@@ -24,7 +24,7 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.dsatracker.mac
         PRODUCT_NAME: DSA Tracker
-        INFOPLIST_FILE: Support/Info.plist
+        INFOPLIST_FILE: Sources/Support/Info.plist
         CODE_SIGN_IDENTITY: "-"
         CODE_SIGN_STYLE: Manual
         ENABLE_HARDENED_RUNTIME: false
@@ -34,7 +34,7 @@ targets:
       - target: DSATrackerWidgetExtension
         embed: true
     entitlements:
-      path: Support/DSATrackerMac.entitlements
+      path: Sources/Support/DSATrackerMac.entitlements
       properties:
         com.apple.security.app-sandbox: false
 
@@ -52,15 +52,15 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.dsatracker.mac.widget
         PRODUCT_NAME: DSATrackerWidgetExtension
-        INFOPLIST_FILE: Support/WidgetInfo.plist
+        INFOPLIST_FILE: Sources/Support/WidgetInfo.plist
         CODE_SIGN_IDENTITY: "-"
         CODE_SIGN_STYLE: Manual
         ENABLE_HARDENED_RUNTIME: false
-        CODE_SIGN_ENTITLEMENTS: Support/DSATrackerWidgetExtension.entitlements
+        CODE_SIGN_ENTITLEMENTS: Sources/Support/DSATrackerWidgetExtension.entitlements
         LD_RUNPATH_SEARCH_PATHS:
           - "@executable_path/../Frameworks"
           - "@executable_path/../../../../Frameworks"
     entitlements:
-      path: Support/DSATrackerWidgetExtension.entitlements
+      path: Sources/Support/DSATrackerWidgetExtension.entitlements
       properties:
         com.apple.security.app-sandbox: true

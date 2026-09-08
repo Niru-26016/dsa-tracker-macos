@@ -27,12 +27,12 @@
       <td align="center" width="50%">
         <strong>Large (4×4) Widget</strong><br/>
         <em>Single-column view with topic selector, topic progress bar & pinned pagination</em><br/><br/>
-        <img src="docs/screenshots/large-widget.png" alt="DSA Tracker Large Widget (4x4)" width="380"/>
+        <img src="https://github.com/Niru-26016/dsa-tracker-macos/releases/download/v1.0.0/large-widget.png" alt="DSA Tracker Large Widget (4x4)" width="380"/>
       </td>
       <td align="center" width="50%">
         <strong>Extra Large (8×4) Widget</strong><br/>
         <em>Expansive 2-column view displaying up to 12 problems simultaneously</em><br/><br/>
-        <img src="docs/screenshots/extra-large-widget.png" alt="DSA Tracker Extra Large Widget (8x4)" width="480"/>
+        <img src="https://github.com/Niru-26016/dsa-tracker-macos/releases/download/v1.0.0/extra-large-widget.png" alt="DSA Tracker Extra Large Widget (8x4)" width="480"/>
       </td>
     </tr>
   </table>
@@ -120,42 +120,31 @@ macOS typically registers the widget instantly. If your system requires a manual
 dsa-tracker-macos/
 │
 ├── 📁 Sources/
-│   │
 │   ├── 📁 DSATrackerMac/                        # Headless macOS host application
 │   │   ├── 📄 DSATrackerMacApp.swift            # Host lifecycle (pure accessory, LSUIElement: true)
-│   │   │
 │   │   └── 📁 Models/
 │   │       ├── 📄 Problem.swift                 # Core Problem model, Difficulty & Platform enums, Topic lists
 │   │       ├── 📄 StarterProblems.swift         # 300 curated questions (Source of Truth)
 │   │       └── 📄 TrackerStore.swift            # POSIX file-locked state management & ProblemPage math
 │   │
-│   └── 📁 DSATrackerWidget/                     # Native WidgetKit extension
-│       ├── 📄 DSATrackerWidget.swift            # StaticConfiguration views (Large & Extra Large)
-│       └── 📄 ToggleProblemIntent.swift         # Interactive AppIntents (checkboxes, topic picker, paging)
+│   ├── 📁 DSATrackerWidget/                     # Native WidgetKit extension
+│   │   ├── 📄 DSATrackerWidget.swift            # StaticConfiguration views (Large & Extra Large)
+│   │   └── 📄 ToggleProblemIntent.swift         # Interactive AppIntents (checkboxes, topic picker, paging)
+│   │
+│   └── 📁 Support/                              # Target configurations & entitlements
+│       ├── 📄 Info.plist                        # Host app metadata & LSUIElement flag
+│       ├── 📄 WidgetInfo.plist                  # WidgetKit extension configuration
+│       ├── 📄 DSATrackerMac.entitlements        # Host sandbox permissions
+│       └── 📄 DSATrackerWidgetExtension.entitlements# Widget sandbox permissions
 │
 ├── 📁 Tests/
 │   └── 📁 DSATrackerMacTests/
 │       └── 📄 TrackerStoreTests.swift           # 17 unit tests (persistence, migration, concurrency)
 │
-├── 📁 Support/
-│   ├── 📄 Info.plist                            # Host app metadata & LSUIElement flag
-│   ├── 📄 WidgetInfo.plist                      # WidgetKit extension configuration
-│   ├── 📄 DSATrackerMac.entitlements            # Host sandbox permissions
-│   └── 📄 DSATrackerWidgetExtension.entitlements# Widget sandbox permissions
-│
 ├── 📁 scripts/
 │   ├── 📄 bundle_app.sh                         # Apple Silicon (arm64) release compiler & codesign
 │   └── 📄 package_release.sh                    # Apple Silicon ZIP archive packager
 │
-├── 📁 docs/
-│   └── 📁 screenshots/                          # Preview image assets for README
-│       └── 📄 README.md                         # Screenshot guidelines
-│
-├── 📁 .github/
-│   └── 📁 workflows/
-│       └── 📄 ci.yml                            # GitHub Actions automated test & build workflow
-│
-├── 🛠️ DSATracker.xcodeproj/                     # Checked-in Xcode project (ready to build in Xcode)
 ├── ⚙️ project.yml                               # Declarative XcodeGen project specification
 ├── 📦 Package.swift                             # Swift Package Manager manifest (for swift test)
 ├── 📋 CHANGELOG.md                              # Chronological release log
@@ -170,7 +159,7 @@ dsa-tracker-macos/
 ### Prerequisites
 - macOS 14.0 (Sonoma) or later
 - Xcode 15.0 or later (with command line tools installed)
-- No Node.js, npm, or external dependencies required
+- [XcodeGen](https://github.com/yonaskolb/XcodeGen) (`brew install xcodegen`) — used by the build script to generate the Xcode project on demand
 
 ### Build Steps
 
